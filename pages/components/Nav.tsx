@@ -4,7 +4,6 @@ import { Fragment } from "react";
 import { Disclosure, Menu, Transition } from "@headlessui/react";
 import { BellIcon, MenuIcon, XIcon } from "@heroicons/react/outline";
 import Image from "next/image";
-import { Button,  Input } from "@supabase/ui";
 
 
 const user = {
@@ -30,7 +29,7 @@ export default function Nav() {
       <Disclosure as="nav" className="bg-white border-b border-gray-200">
         {({ open }) => (
           <>
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="px-4 sm:px-6 lg:px-8">
               <div className="flex justify-between h-16">
                 <div className="flex">
                   <div className="flex-shrink-0 flex items-center">
@@ -61,11 +60,6 @@ export default function Nav() {
                   </div>
                 </div>
                 <div className="hidden sm:ml-6 sm:flex sm:items-center">
-                  <div className="flex align-middle justify-center w-full">
-                    <Input
-                      actions={[<Button key="btn-search">Search</Button>]}
-                    />
-                  </div>
 
                   {/* Profile dropdown */}
                   <Menu as="div" className="ml-3 relative">

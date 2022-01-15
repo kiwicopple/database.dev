@@ -1,29 +1,41 @@
 import Nav from "./components/Nav";
+import Hero from "./components/Hero";
+import Filters from "./components/Filters";
+import Footer from "./components/Footer";
+import PackageList from "./components/PackageList";
 
 export default function Index() {
   return (
     <>
       <div className="min-h-full">
         <Nav />
-        <div className="py-10">
-          <header>
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-              <h1 className="text-3xl font-bold leading-tight text-gray-900">
-                Dashboard
-              </h1>
-            </div>
-          </header>
-          <main>
-            <div className="max-w-7xl mx-auto sm:px-6 lg:px-8">
-              {/* Replace with your content */}
-              <div className="px-4 py-8 sm:px-0">
-                <div className="border-4 border-dashed border-gray-200 rounded-lg h-96" />
+        <main>
+          
+            <div className="grid grid-cols-1 items-start lg:grid-cols-3 divide-x">
+              {/* Left column */}
+              <div className="grid grid-cols-1 gap-4 lg:col-span-2 divide-y">
+                <section>
+                  <Hero />
+                </section>
+                <section>
+                  <PackageList />
+                </section>
               </div>
-              {/* /End replace */}
+              {/* Right column */}
+              <div className="grid grid-cols-1 gap-4 ">
+                <FilterBar />
+              </div>
             </div>
-          </main>
-        </div>
+            
+        </main>
+        <Footer />
       </div>
     </>
   );
 }
+
+const FilterBar = () => (
+  <section>
+      <Filters />
+  </section>
+);
