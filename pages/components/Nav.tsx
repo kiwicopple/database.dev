@@ -15,6 +15,8 @@ const user = {
 const navigation = [
   { name: "Packages", href: "#", current: true },
   { name: "Docs", href: "#", current: false },
+  { name: "Pricing", href: "#", current: false },
+  { name: "Marketplace", href: "#", current: false },
 ];
 const userNavigation = [
   { name: "Your Profile", href: "#" },
