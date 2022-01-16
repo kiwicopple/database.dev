@@ -1,12 +1,15 @@
 import { createClient, SupabaseClient } from "@supabase/supabase-js";
+import { config } from "./config";
 
 let supabaseSingleton: null | SupabaseClient = null;
 
-const SUPABASE_URL = process.env.SUPABASE_URL || "http://localhost:54321";
-const SUPABASE_KEY_ANON = process.env.SUPABASE_KEY_ANON || "";
+console.log('process.env.SUPABASE_URL', process.env.SUPABASE_URL)
 
 if (supabaseSingleton === null) {
-  supabaseSingleton = createClient(SUPABASE_URL, SUPABASE_KEY_ANON);
+  supabaseSingleton = createClient(
+    config.SUPABASE_URL,
+    config.SUPABASE_KEY_ANON
+  );
 }
 
 const supabase = supabaseSingleton as SupabaseClient;
